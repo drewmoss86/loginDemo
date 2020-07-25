@@ -15,10 +15,10 @@
 		</div>
 		<div class="card-body">
 			<form action="#" th:object="${user}" method="POST">
-			     <input type="text" class="form-control" placeholder="First Name" th:field="*{firstName}" /> 
-				<!--<input type="text" class="form-control" placeholder="last Name" th:field="*{lastName}" />	
-				<input type="text" class="form-control" placeholder="Email address" th:field="*{email}"/>
-				<input type="text" class="form-control" placeholder="Password" th:field="*{password}"/>	-->
+				<input type="text" class="form-control" placeholder="First Name" th:field="*{firstName}" />
+				<input type="text" class="form-control" placeholder="last Name" th:field="*{lastName}" />
+				<input type="email" class="form-control" placeholder="Email address" th:field="*{email}"/>
+				<input type="password" class="form-control" placeholder="Password" th:field="*{password}"/>
 				
 				<button type="submit" class="btn btn-primary">Register</button>		
 			</form>
