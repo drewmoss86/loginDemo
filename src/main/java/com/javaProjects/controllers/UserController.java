@@ -29,13 +29,17 @@ public class UserController {
 	public String login() {
 		return "login";
 	}
-	
+
+	//Need to bring in a new User object to the registration page. In order to do that, I need to use a built in
+	// method with Java's Model class attribute called addAttribute
 	@RequestMapping({"", "register", "register.html"})
 	public String register(Model model) {
-		model.addAttribute("user", new User());
+		model.addAttribute("user", new User()); // this will instantiate a new User Class object and pass it into
+		// register
 		return "register";
 	}
-	
+
+	// User is passed back out of register view and saved via the repository
 	@PostMapping({"", "register", "register.html"})
 	public String submitRegister(@ModelAttribute("user") User user) {
 		System.out.println(user);
