@@ -5,7 +5,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.javaProjects.models.User;
 import com.javaProjects.repositories.UserRepo;
@@ -16,7 +15,11 @@ import com.javaProjects.repositories.UserRepo;
 public class UserController {
 	
 	UserRepo userRepo;
-	
+
+	public UserController(UserRepo userRepo) {
+		this.userRepo = userRepo;
+	}
+
 	@RequestMapping("/") //backslash always represents homepage
 	public String homepage() {
 		return "index";

@@ -8,6 +8,14 @@ import javax.xml.crypto.Data;
 @Entity   //entity stands for a table for a database under models
 public class User {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO) //set as auto increment for ID
+	private Long id;
+	private String firstName;
+	private String lastName;
+	private String email;
+	private String password;
+
 	public Long getId() {
 		return id;
 	}
@@ -48,12 +56,13 @@ public class User {
 		this.password = password;
 	}
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO) //set as auto increment for ID
-	private Long id;
-	private String firstName;
-	private String lastName;
-	private String email;
-	private String password;
-	
+	@Override
+	public String toString() {
+		return "User{" +
+				"firstName='" + firstName + '\'' +
+				", lastName='" + lastName + '\'' +
+				", email='" + email + '\'' +
+				", password='" + password + '\'' +
+				'}';
+	}
 }
